@@ -2,6 +2,7 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /*
@@ -17,18 +18,21 @@ import java.util.Scanner;
 
 
 public class movement {
-    
+            
+            public int CodX ; 
+            public int CodY;
         
-        //creating objects 
-        plateau plateau = new plateau ();
         
         
         public void move(rover rover,plateau plateau) throws IOException{
                                    
             
                                     //Call the values x , y , and position thr rover is facing by creating an their objects 
+            
                                     int coordinateXrover = rover.getcoodX();
                                     int coordinateYrover = rover.getcoodY();
+                                    CodX = coordinateXrover;
+                                    CodY = coordinateYrover ;
                                     String roverfacingposition = rover.getposition();
                                     
                                     
@@ -36,7 +40,7 @@ public class movement {
                                     int lengthXplateau = plateau.getplateauXlength();
                                     int lengthYplateau = plateau.getplateauYlength();
                                     
-                                    
+                                  
                                     //declare a boolean that will contain TRUE or FALSE to be use in a while loop 
                                     boolean stop = false ; 
                                     
@@ -53,7 +57,7 @@ public class movement {
                                     
                                     //switch statment to check values 1 by 1 
                                     switch(command){
-                                                            
+                                                
                                                                   case "M" :        
                                                                   {   if(roverfacingposition.equals("N")){
                                                                                     if(coordinateYrover < lengthYplateau ){
@@ -119,7 +123,13 @@ public class movement {
                                                                 }
                                     
                                                         System.out.println("rover is @ point (" +coordinateXrover+ ","+coordinateYrover+ " and facing "+roverfacingposition+" )");
-                                                                    
+                                                                    	 
+                                                        
+                                                        
+
+                                                        
+                                                                         
+                                                                        
                                                         }
                                                 
                                                 }
