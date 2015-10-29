@@ -19,8 +19,10 @@ public class roverTest {
                                                         @Test
                                                         public void testSetcoodX() {
                                                             //Arrange
-                                                            rover rover = new rover () ; 
+                                                            rover rover = new rover () ;
+                                                            //Act
                                                             rover.setcoodX(10);
+                                                            //Assert
                                                             Assert.assertTrue(rover.getcoodX()==10);
                                                      }
 
@@ -28,7 +30,9 @@ public class roverTest {
                                                         public void testSetcoodY() {
                                                             //Arrange
                                                             rover rover = new rover () ; 
+                                                            //Act
                                                             rover.setcoodX(20);
+                                                            //Assert
                                                             Assert.assertTrue(rover.getcoodX()==20);
                                                         }
 
@@ -36,7 +40,9 @@ public class roverTest {
                                                         public void testGetcoodX() {
                                                             //Arrange
                                                             rover rover = new rover() ; 
+                                                            //Act
                                                             int output = rover.getcoodX();
+                                                            //Assert
                                                             Assert.assertEquals(output, 0);
                                                         }
 
@@ -44,15 +50,19 @@ public class roverTest {
                                                         public void testGetcoodY() {
                                                             //Arrange
                                                             rover rover = new rover() ; 
+                                                            //Act
                                                             int output = rover.getcoodX();
+                                                            //Assert
                                                             Assert.assertEquals(output, 0);
                                                         }
 
                                                         @Test
                                                         public void testSetposition() {
                                                             //Arrange
-                                                            rover rover = new rover () ; 
+                                                            rover rover = new rover () ;
+                                                            //Act
                                                             rover.setposition("N");
+                                                            //Assert
                                                             Assert.assertTrue(rover.getposition()=="N");
                                                         }
 
@@ -60,8 +70,20 @@ public class roverTest {
                                                         public void testGetposition() {
                                                              //Arrange
                                                             rover rover = new rover() ; 
+                                                            //Act
                                                             rover.getposition();
+                                                            //Assert
                                                             Assert.assertEquals(rover.getposition(),null);
+                                                        }
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        //ABNORMAL TEST 
+                                                        @Test 
+                                                        public void testSetcoodXAbnormal (){
+                                                             //Arrange 
+                                                              rover rover = new rover () ; 
                                                         }
     
 }
