@@ -91,7 +91,7 @@ public class roverTest {
                                                         }
     
                                                         @Test(expected =NumberFormatException .class)
-                                                         public void testSetcoodXAbnormal2 (){
+                                                         public void testSetcoodXAbnormalString (){
                                                              //Arrange 
                                                              rover rover = new rover () ; 
                                                              //Act 
@@ -102,16 +102,39 @@ public class roverTest {
                                                         }
                                         
                                                          @Test(expected = NumberFormatException.class)
-                                                                public void testSetcoodXAbnormal2Symbol(){
+                                                                public void testSetcoodXAbnormalSymbol(){
                                                                 //Arrange
                                                                 rover rover = new rover () ; 
                                                                 //Act 
                                                                 int a = Integer.parseInt("#%$^&^%$^%");
+                                                                rover.setcoodX(a);
                                                                 //Assert
                                                                 Assert.assertTrue(rover.getcoodX()== a);
                                                         }
                                                          
-
+                                                         @Test(expected = NumberFormatException.class)
+                                                          public void testSetcoodXAbnormalIsNull(){
+                                                                //Arrange
+                                                                rover rover = new rover () ;
+                                                                //Act 
+                                                                int a = Integer.parseInt(null);
+                                                                rover.setcoodX(a);
+                                                                //Assert
+                                                                Assert.assertTrue(rover.getcoodX()== a);
+                                                                
+                                                          }
+                                                         
+                                                         
+                                                          
+                                                          
+                                                          @Test
+                                                          public void CreateRover (){
+                                                          //Arrange 
+                                                              rover rover = new rover() ;
+                                                          //Assert
+                                                              Assert.assertNotNull(rover);
+                                                              
+                                                          }
 
 
 
