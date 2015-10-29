@@ -79,11 +79,43 @@ public class roverTest {
                                                         
                                                         
                                                         
-                                                        //ABNORMAL TEST 
-                                                        @Test 
+                                                        //ABNORMAL TEST
+                                                        @Test
                                                         public void testSetcoodXAbnormal (){
                                                              //Arrange 
-                                                              rover rover = new rover () ; 
+                                                             rover rover = new rover () ; 
+                                                             //Act 
+                                                             rover.setcoodX(999999999);
+                                                             //Assert
+                                                             Assert.assertTrue(rover.getcoodX()== 999999999);
                                                         }
     
+                                                        @Test(expected =NumberFormatException .class)
+                                                         public void testSetcoodXAbnormal2 (){
+                                                             //Arrange 
+                                                             rover rover = new rover () ; 
+                                                             //Act 
+                                                             int a =Integer.parseInt("abc") ;
+                                                             rover.setcoodX(a);
+                                                             //Assert
+                                                             Assert.assertTrue( rover.getcoodX()== a);
+                                                        }
+                                        
+                                                         @Test(expected = NumberFormatException.class)
+                                                                public void testSetcoodXAbnormal2Symbol(){
+                                                                //Arrange
+                                                                rover rover = new rover () ; 
+                                                                //Act 
+                                                                int a = Integer.parseInt("#%$^&^%$^%");
+                                                                //Assert
+                                                                Assert.assertTrue(rover.getcoodX()== a);
+                                                        }
+                                                         
+
+
+
+
+
+
+
 }
